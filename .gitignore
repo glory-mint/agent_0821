@@ -1,0 +1,31 @@
+# 환경변수 및 비밀정보
+.env
+.env.*
+!.env.example
+**/.streamlit/secrets.toml
+
+# Python 가상환경
+.venv/
+venv/
+env/
+
+# Python 캐시 및 테스트 결과
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 빌드 결과
+build/
+dist/
+*.egg-info/
+
+# IDE 설정
+.vscode/
+.idea/
+
+# 운영체제 및 로그 파일
+.DS_Store
+Thumbs.db
+*.log
