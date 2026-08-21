@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from app.routers.library_agent_router import library_agent_router
+from app.routers.parcel_agent_router import parcel_agent_router
 from app.routers.stage_01_router import stage_01_router
 from app.routers.stage_02_router import stage_02_router
 from app.routers.stage_03_router import stage_03_router
@@ -23,6 +24,10 @@ TAGS_METADATA = [
         "name": "04 · 도서관 Agent",
         "description": "도서 검색, 대출 가능 여부 확인과 장르 추천 기능입니다.",
     },
+    {
+        "name": "05 · 택배 Agent",
+        "description": "배송 상태, 예상 도착일과 무인 택배함 조회 기능입니다.",
+    },
 ]
 
 
@@ -31,3 +36,4 @@ app.include_router(stage_01_router)
 app.include_router(stage_02_router)
 app.include_router(stage_03_router)
 app.include_router(library_agent_router)
+app.include_router(parcel_agent_router)

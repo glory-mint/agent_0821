@@ -7,11 +7,16 @@ from pydantic import ValidationError
 
 from app.schemas.stage_03 import ToolRunResult
 from app.tools.library.registry import LIBRARY_TOOL_REGISTRY
+from app.tools.parcel.registry import PARCEL_TOOL_REGISTRY
 from app.tools.registry import TOOL_REGISTRY
 
 
 def execute_tool_safely(name: str, arguments: dict) -> ToolRunResult:
-    tool = TOOL_REGISTRY.get(name) or LIBRARY_TOOL_REGISTRY.get(name)
+    tool = (
+        TOOL_REGISTRY.get(name)
+        or LIBRARY_TOOL_REGISTRY.get(name)
+        or PARCEL_TOOL_REGISTRY.get(name)
+    )
     if tool is None:
         return ToolRunResult(success=False, tool_name=name, error={"code": "TOOL_NOT_ALLOWED", "message": "허용되지 않은 Tool입니다."})
     try:

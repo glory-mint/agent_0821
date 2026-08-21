@@ -21,6 +21,7 @@ tool_run = st.Page("app_pages/15_tool_run.py", title="Tool 실행")
 tool_errors = st.Page("app_pages/16_tool_errors.py", title="Tool 오류 처리")
 agent_cycle = st.Page("app_pages/17_agent_cycle.py", title="Agent Cycle")
 library_agent = st.Page("app_pages/18_library_agent.py", title="도서관 도우미 Agent")
+parcel_agent = st.Page("app_pages/19_parcel_agent.py", title="택배 조회 Agent")
 
 navigation = st.navigation(
     [
@@ -42,6 +43,7 @@ navigation = st.navigation(
         tool_errors,
         agent_cycle,
         library_agent,
+        parcel_agent,
     ],
     position="hidden",
 )
@@ -78,6 +80,7 @@ with st.sidebar:
     st.divider()
     with st.expander("04. 추가 Agent", expanded=True):
         st.page_link(library_agent, label="4-1. 도서관 도우미")
+        st.page_link(parcel_agent, label="4-2. 택배 조회")
 
     st.divider()
     st.caption("실행 환경")
