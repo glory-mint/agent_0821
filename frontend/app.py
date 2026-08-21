@@ -20,8 +20,31 @@ tool_validation = st.Page("app_pages/14_tool_validation.py", title="Tool 입력 
 tool_run = st.Page("app_pages/15_tool_run.py", title="Tool 실행")
 tool_errors = st.Page("app_pages/16_tool_errors.py", title="Tool 오류 처리")
 agent_cycle = st.Page("app_pages/17_agent_cycle.py", title="Agent Cycle")
+library_agent = st.Page("app_pages/18_library_agent.py", title="도서관 도우미 Agent")
 
-navigation = st.navigation([home, concept, travel, environment, llm, providers, image_analysis, tts, prompt, validation, structured, tool_schema, tool_select, tool_validation, tool_run, tool_errors, agent_cycle], position="hidden")
+navigation = st.navigation(
+    [
+        home,
+        concept,
+        travel,
+        environment,
+        llm,
+        providers,
+        image_analysis,
+        tts,
+        prompt,
+        validation,
+        structured,
+        tool_schema,
+        tool_select,
+        tool_validation,
+        tool_run,
+        tool_errors,
+        agent_cycle,
+        library_agent,
+    ],
+    position="hidden",
+)
 
 with st.sidebar:
     st.title("🧰 Mini Agent 03")
@@ -51,6 +74,10 @@ with st.sidebar:
         st.page_link(tool_run, label="3-4. Tool 안전 실행")
         st.page_link(tool_errors, label="3-5. Tool 오류 처리")
         st.page_link(agent_cycle, label="3-6. Agent Cycle")
+
+    st.divider()
+    with st.expander("04. 추가 Agent", expanded=True):
+        st.page_link(library_agent, label="4-1. 도서관 도우미")
 
     st.divider()
     st.caption("실행 환경")
